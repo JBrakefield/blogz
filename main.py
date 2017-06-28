@@ -49,12 +49,12 @@ def newpost():
 @app.route('/blog')
 def blog():
 
-    blogs = Blog.query.all()
     blog_id = request.args.get('id')
     if blog_id:
         selected_blog = Blog.query.filter_by(id=blog_id).first()
         return render_template('individual.html', selected_blog=selected_blog)
     else:
+        blogs = Blog.query.all()
         return render_template('blog.html', blogs=blogs)
 
 @app.route('/')
