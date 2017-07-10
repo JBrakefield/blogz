@@ -5,11 +5,11 @@
     {% if blogs|length == 0 %}
     <p>No blog posted yet.</p>
     {% else %}
+        <h2 align="center">{{selected_user.username}}'s Blog Posts</h2>
         {% for blog in blogs %}
         <hr />
-        <h2><a href="blog?id={{blog.id}}">{{blog.title}}<a></h2>
+        <h3><a href="blog?id={{blog.id}}">{{blog.title}}<a></h3>
         <p>{{blog.body}}</p>
-        <p class="tagline"><i>Written by <a href="blog?user={{blog.owner.username}}">{{blog.owner.username}}.</a></i></p>
         {% endfor %}
     {% endif %}
 

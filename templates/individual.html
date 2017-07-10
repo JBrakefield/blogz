@@ -2,7 +2,9 @@
 
 {% block content %}
 
-<h2>{{selected_blog.title}}</h2>
+<hr/>
+<h3>{{selected_blog.title}}</h3>
 <p>{{selected_blog.body}}</p>
+<p class="tagline"><i>Written by <a href="blog?user={{selected_blog.owner.username}}">{{selected_blog.owner.username}}.</a></i></p>
 
 {% endblock %}
